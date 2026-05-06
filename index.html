@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sociology of the Family Introduction Module Checklist</title>
+
+<style>
+:root {
+  --navy: #002855;
+  --gold: #f6c445;
+  --soft-gold: #fff7e3;
+  --cream: #fffaf0;
+  --blue-soft: #eaf4ff;
+  --teal: #2e8094;
+  --text: #1b2b3a;
+  --muted: #5d6b7a;
+  --card: rgba(255,255,255,.92);
+  --shadow: 0 14px 35px rgba(0,40,85,.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, #fff2c9 0, transparent 32%),
+    radial-gradient(circle at top right, #dff3ff 0, transparent 28%),
+    linear-gradient(135deg, #fffaf0 0%, #f5fbff 100%);
+  line-height: 1.55;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.hero {
+  background: var(--card);
+  border: 3px solid var(--navy);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.hero-top {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: center;
+  padding: 28px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  margin: 0 0 10px;
+  line-height: 1.05;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin: 0 0 14px;
+}
+
+.course-tag {
+  display: inline-block;
+  background: var(--soft-gold);
+  border: 2px solid var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+}
+
+.instructor-img {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.13);
+}
+
+.image-strip {
+  padding: 0 28px 28px;
+}
+
+.image-strip img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid white;
+  box-shadow: 0 8px 22px rgba(0,0,0,.14);
+}
+
+.notice {
+  margin: 22px 0;
+  background: var(--soft-gold);
+  border: 3px solid var(--navy);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.notice .icon {
+  font-size: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.action-card {
+  background: var(--card);
+  border: 2px solid rgba(0,40,85,.14);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(0,40,85,.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 26px rgba(0,40,85,.16);
+}
+
+.action-card h2 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.action-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.big-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checklist-section {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  border: 2px solid rgba(0,40,85,.12);
+  margin-top: 22px;
+}
+
+.checklist-section h2 {
+  color: var(--navy);
+  font-size: 1.85rem;
+  margin-top: 0;
+}
+
+.instructions {
+  background: var(--blue-soft);
+  border-left: 7px solid var(--teal);
+  padding: 15px 18px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,40,85,.12);
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item input {
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  accent-color: var(--teal);
+}
+
+.item label {
+  cursor: pointer;
+}
+
+.item-title {
+  font-weight: 800;
+  color: var(--navy);
+  font-size: 1.08rem;
+}
+
+.item-desc {
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.assignment-callout {
+  margin-top: 24px;
+  background: linear-gradient(135deg, #fff7e3, #ffffff);
+  border: 3px dashed var(--gold);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.assignment-callout h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+.progress-box {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 2px solid rgba(0,40,85,.12);
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.progress-bar {
+  height: 18px;
+  background: #e8edf5;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  transition: width .35s ease;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 800;
+  cursor: pointer;
+  background: var(--navy);
+  color: white;
+}
+
+button.secondary {
+  background: #eef4fb;
+  color: var(--navy);
+  border: 2px solid rgba(0,40,85,.16);
+}
+.completion-message {
+  display: none;
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #fff7d8, #ffffff);
+  border: 3px solid #f6c445;
+  color: #002855;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0,40,85,.12);
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px 10px 10px;
+  font-size: .95rem;
+}
+
+@media (max-width: 900px) {
+  .hero-top {
+    grid-template-columns: 1fr;
+  }
+
+  .instructor-img {
+    max-width: 360px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrapper {
+    padding: 12px;
+  }
+
+  .hero-top,
+  .image-strip,
+  .checklist-section {
+    padding: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notice {
+    align-items: flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<section class="hero">
+
+<div class="hero-top">
+
+<div>
+<span class="course-tag">
+SOC-213 • Sociology of the Family
+</span>
+
+<h1>
+Introduction Module Checklist
+</h1>
+
+<p>
+Welcome to our course! Use this page to stay organized during the first 10% of the course.
+</p>
+
+<p>
+Please complete each action below so you are ready for the semester and fully connected to the course expectations.
+</p>
+</div>
+
+<div>
+<img class="instructor-img"
+src="WELCOME-CARTOON.png"
+alt="Welcome instructor image">
+</div>
+
+</div>
+
+<div class="image-strip">
+<img src="family.gif"
+alt="Family quote image">
+</div>
+
+</section>
+
+<div class="notice">
+<span class="icon">🗓️</span>
+<span>
+For the first 10% of this course, please complete the following actions:
+</span>
+</div>
+
+<section class="grid">
+
+<div class="action-card">
+<span class="big-icon">✅</span>
+<h2>Action 1</h2>
+<p>Complete the EVA.</p>
+</div>
+
+<div class="action-card">
+<span class="big-icon">📘</span>
+<h2>Action 2</h2>
+<p>Read the syllabus.</p>
+</div>
+
+<div class="action-card">
+<span class="big-icon">🧭</span>
+<h2>Action 3</h2>
+<p>Explore the course layout.</p>
+</div>
+
+<div class="action-card">
+<span class="big-icon">💬</span>
+<h2>Action 4</h2>
+<p>Participate in the welcome discussion.</p>
+</div>
+
+<div class="action-card">
+<span class="big-icon">📚</span>
+<h2>Action 5</h2>
+<p>Prepare your materials.</p>
+</div>
+
+</section>
+<div id="completion-message" class="completion-message">
+  🎉 Congratulations! You completed all of the Introduction Module tasks.
+  <br><br>
+  Please begin reading Chapters 1–3 for Module One.
+</div>
+
+<section class="checklist-section">
+
+<h2>Student Checklist</h2>
+
+<div class="instructions">
+Check off each item as you complete it. This checklist is for your personal organization and does not submit answers to Canvas.
+</div>
+
+<div class="item">
+<input type="checkbox" id="eva">
+<label for="eva">
+<div class="item-title">
+✅ Action 1: Complete the EVA (Enrollment Verification Activity)
+</div>
+<div class="item-desc">
+This is required during the first 10% of the course and confirms your active participation.
+</div>
+</label>
+</div>
+
+<div class="item">
+<input type="checkbox" id="syllabus">
+<label for="syllabus">
+<div class="item-title">
+📘 Action 2: Read the Syllabus
+</div>
+<div class="item-desc">
+Review course expectations, deadlines, grading policies, and communication guidelines.
+</div>
+</label>
+</div>
+
+<div class="item">
+<input type="checkbox" id="layout">
+<label for="layout">
+<div class="item-title">
+🧭 Action 3: Explore the Course Layout
+</div>
+<div class="item-desc">
+Click through the course so you know where to locate assignments, discussions, grades, and resources.
+</div>
+</label>
+</div>
+
+<div class="item">
+<input type="checkbox" id="discussion">
+<label for="discussion">
+<div class="item-title">
+💬 Action 4: Participate in the Welcome Discussion
+</div>
+<div class="item-desc">
+Introduce yourself and begin building our course learning community.
+</div>
+</label>
+</div>
+
+<div class="item">
+<input type="checkbox" id="materials">
+<label for="materials">
+<div class="item-title">
+📚 Action 5: Prepare Your Materials
+</div>
+<div class="item-desc">
+Ensure you have access to your textbook, Blackboard/Canvas tools, and required materials.
+</div>
+</label>
+</div>
+
+<div class="assignment-callout">
+
+<h3>
+Additional Introduction Module Items
+</h3>
+
+<p>
+<strong>Introduction Module: Getting to Know You</strong><br>
+Complete this activity so your instructor and classmates can begin getting to know you.
+</p>
+
+<p>
+<strong>Introduction Module: Family Daily Life &amp; Work Essay</strong><br>
+This assignment is worth <strong>200 points</strong>.
+Read the directions carefully and submit by the posted deadline.
+</p>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-row">
+<span>Checklist Progress</span>
+<span id="progress-text">0 of 5 complete</span>
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill" id="progress-fill"></div>
+</div>
+
+<div class="buttons">
+<button onclick="window.print()">
+Print Checklist
+</button>
+
+<button class="secondary" onclick="resetChecklist()">
+Reset Checklist
+</button>
+</div>
+
+</div>
+
+</section>
+
+<div class="footer">
+Sociology helps us understand family as both personal experience and social institution.
+</div>
+
+</div>
+
+<script>
+const boxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+const progressText = document.getElementById('progress-text');
+const progressFill = document.getElementById('progress-fill');
+const completionMessage = document.getElementById('completion-message');
+
+function updateProgress() {
+
+  const checked = boxes.filter(box => box.checked).length;
+  const percent = (checked / boxes.length) * 100;
+
+  progressText.textContent =
+    checked + ' of ' + boxes.length + ' complete';
+
+  progressFill.style.width = percent + '%';
+
+  if (checked === boxes.length) {
+    completionMessage.style.display = 'block';
+  } else {
+    completionMessage.style.display = 'none';
+  }
+}
+
+function resetChecklist() {
+  boxes.forEach(box => box.checked = false);
+  updateProgress();
+}
+
+boxes.forEach(box =>
+  box.addEventListener('change', updateProgress)
+);
+
+updateProgress();
+</script>
